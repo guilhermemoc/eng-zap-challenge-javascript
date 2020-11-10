@@ -45,9 +45,6 @@ export class HomeComponent implements OnInit {
         );
 
         this.mountLists();
-
-        // TODO: Retirar
-        console.log(this.elegibleList);
       }
     });
   }
@@ -64,12 +61,10 @@ export class HomeComponent implements OnInit {
 
   getZap() {
     this.arrayZap = this.rulesIteratorService.getZapElegibleProperts(this.elegibleList);
-    console.log(this.arrayZap, 'ZAP');
   }
 
   getViva() {
     this.arrayViva = this.rulesIteratorService.getVivaElegiblePropertis(this.elegibleList);
-    console.log(this.arrayViva, 'VIVA');
   }
 
   showZapList() {
