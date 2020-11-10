@@ -27,6 +27,7 @@
   width: 75%;
   margin: 0 auto;
   display: block;
+  height: 324px;
 }
 
 .text-area {
@@ -38,18 +39,38 @@
   display: inline-block;
 }
 
-.paginator{
+.paginator {
   background: #fff;
   margin: 20px 0;
   border-radius: 4px;
   text-align: center;
 }
 
-.card{
+.card {
   height: 573px;
 }
 
-.details-link{
+.details-link {
   cursor: pointer;
   color: #c8d419;
+}
+
+@media (max-width: 320px) {
+  .text-area {
+    text-align: center;
+    margin: 22px auto;
+    display: block;
+  }
+
+  .img-imv {
+    height: 290px;
+  }
+}
+
+@media (max-width: 425px) {
+  .text-area {
+    text-align: center;
+    margin: 22px auto;
+    display: block;
+  }
 }
