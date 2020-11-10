@@ -6,18 +6,17 @@
 
 <div class="row">
   <div class="col-4" *ngFor="let item of apresentationArray; let i = index">
-
-    <!-- DETALHE -->
-    <!-- <button mat-raised-button (click)="openDialog(item)">Detalhe</button> -->
-
     <div class="item card">
       <div class="image">
         <img class="img-imv" [src]="item.images[0]" alt="">
       </div>
       <div class="text-area">
         <h1 class="title">Apartamento para {{ item?.pricingInfos?.businessType === BusinessType.SALE ? 'Venda' : 'Locação' }}</h1>
-        <p>2 quartos | 1 banheiros | 55 m2 | 1 vagas</p>
-        <p>Valor: R$ 425000</p>
+        <p>{{ item.bedrooms }} quartos | {{ item.bathrooms }} banheiros | {{ item.usableAreas }} m2 | {{ item.parkingSpaces }} vagas</p>
+        <p *ngIf="item?.pricingInfos?.businessType === BusinessType.RENTAL">Valor:
+          {{  item?.pricingInfos?.rentalTotalPrice | currency: 'BRL' }} /mês</p>
+        <p *ngIf="item?.pricingInfos?.businessType === BusinessType.SALE">Valor:
+          {{  item?.pricingInfos?.price | currency: 'BRL' }}</p>
         <a class="details-link" (click)="openDialog(item)"><h3>Detalhes ></h3></a>
       </div>
     </div>
